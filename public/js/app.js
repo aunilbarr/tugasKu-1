@@ -65780,6 +65780,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -65862,23 +65873,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logo.svg */ "./resources/js/components/logo.svg");
+/* harmony import */ var _logo_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_logo_svg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _SearchBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SearchBar */ "./resources/js/components/SearchBar.js");
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data.js */ "./resources/js/components/data.js");
+/* harmony import */ var _CardWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CardWrapper */ "./resources/js/components/CardWrapper.js");
+
+
+
+
 
 
 
 function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row justify-content-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-8"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-header"
-  }, "Example Component"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
-  }, "I'm an example component!")))));
+    className: "App text-gray-800"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "w-full py-4 px-4 lg:px-8 flex items-center justify-between"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _logo_svg__WEBPACK_IMPORTED_MODULE_2___default.a,
+    className: "w-32",
+    alt: "logo"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "underline text-blue-700",
+    href: "/admin"
+  }, "admin?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full py-4 px-4 flex flex-col items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "font-bold text-4xl leading-tight mb-2 text-center"
+  }, "Temukan tugasmu dengan Mudah."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-gray-700 text-sm text-center"
+  }, "kami para kontributor menyatukan semua tugas yang terpencar dari beberapa website Pembelajaran UIN Sunan Kalijaga.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "max-w-xl py-4 px-4 mx-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBar__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mx-auto max-w-xl px-4 lg:pt-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CardWrapper__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    cards: _data_js__WEBPACK_IMPORTED_MODULE_4__["default"]
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -65886,26 +65917,361 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/js/components/Card.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/Card.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var documentIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  className: "w-4 h-4 mr-4 stroke-current text-blue-500",
+  fill: "none",
+  stroke: "currentColor",
+  viewBox: "0 0 24 24",
+  xmlns: "http://www.w3.org/2000/svg"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeWidth: "2",
+  d: "M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
+}));
+var videoIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  className: "w-4 h-4 mr-4 stroke-current text-blue-500",
+  fill: "none",
+  stroke: "currentColor",
+  viewBox: "0 0 24 24",
+  xmlns: "http://www.w3.org/2000/svg"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeWidth: "2",
+  d: "M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeWidth: "2",
+  d: "M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+}));
+var urlIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+  className: "w-4 h-4 mr-4 stroke-current text-blue-500",
+  fill: "none",
+  stroke: "currentColor",
+  viewBox: "0 0 24 24",
+  xmlns: "http://www.w3.org/2000/svg"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeWidth: "2",
+  d: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+}));
+
+function Details(props) {
+  var details = props.data;
+  var listDetails = details.map(function (detail) {
+    var attachment = detail.attachment;
+    var attachmentBox;
+
+    if (attachment) {
+      var attachmentIcon;
+
+      if (attachment.type === "document") {
+        attachmentIcon = documentIcon;
+      } else if (attachment.type === "video") {
+        attachmentIcon = videoIcon;
+      } else {
+        attachmentIcon = urlIcon;
+      }
+
+      attachmentBox = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flex bg-gray-100 p-2 rounded-md mt-2 items-center"
+      }, attachmentIcon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "text-sm font-medium"
+      }, detail.attachment.name));
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: detail.id.toString(),
+      className: "p-4 border-t"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, detail.text), attachmentBox);
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-4"
+  }, listDetails);
+}
+
+function Card(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bg-white border w-full rounded-lg mb-6 shadow-lg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "px-4 py-2 rounded-t-lg mb-4 bg-green-500"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-white font-semibold"
+  }, props.deadline)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex items-center justify-between"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "px-4 flex items-end"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "text-4xl font-extrabold mr-2 leading-none"
+  }, props.abbrev), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-sm text-gray-400"
+  }, "(", props.subject, ")")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: props.src,
+    className: "pr-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "w-6 h-6 stroke-current text-blue-500",
+    fill: "none",
+    stroke: "currentColor",
+    viewBox: "0 0 24 24",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
+    d: "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Details, {
+    data: props.details
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Card);
+
+/***/ }),
+
+/***/ "./resources/js/components/CardWrapper.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/CardWrapper.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./resources/js/components/Card.js");
+
+
+
+function CardWrapper(props) {
+  var cards = props.cards;
+  var listsCard = cards.map(function (card) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      key: card.id,
+      src: card.src,
+      details: card.details,
+      abbrev: card.abbrev,
+      subject: card.subject,
+      deadline: card.deadline
+    });
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col items-center"
+  }, listsCard);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CardWrapper);
+
+/***/ }),
+
+/***/ "./resources/js/components/SearchBar.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/SearchBar.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function SearchBar() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "border w-full rounded-lg py-2 pl-4 flex flex-col lg:flex-row items-center lg:mb-0 mb-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inline-block mr-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "w-6 h-6 stroke-current text-blue-600",
+    fill: "none",
+    stroke: "currentColor",
+    viewBox: "0 0 24 24",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
+    d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    className: "flex-auto lg:border-r lg:mr-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "py-4 px-4 w-full",
+    type: "text",
+    placeholder: "Mulai cari tugasmu"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "semester-select",
+    className: "mr-2"
+  }, "Semester:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    id: "semester-select",
+    className: "bg-white text-blue-600 font-semibold underline border p-1 rounded text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "All"
+  }, "All"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1"
+  }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "2"
+  }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "3"
+  }, "3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "4"
+  }, "4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "5"
+  }, "5"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "6"
+  }, "6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "6"
+  }, "7"))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchBar);
+
+/***/ }),
+
+/***/ "./resources/js/components/data.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/data.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// TEMPORARY DATA FOR FRONTEND ONLY
+// attachment type= [video, document, url]
+var DATA = [{
+  id: 1,
+  subject: "Sistem Informasi dan Manajemen",
+  abbrev: "SIM",
+  src: "https://learning.uin-suka.ac.id",
+  deadline: "12 June 2020, 23:00",
+  details: [{
+    id: 1,
+    text: "download soal berikut ini",
+    attachment: {
+      name: "Tugas_12_Juni.pdf",
+      type: "document"
+    }
+  }, {
+    id: 2,
+    text: "kumpulkan dengan format [NIM].pdf"
+  }, {
+    id: 3,
+    text: "Kumpulkan via Email yang sudah tercantum di grup Whatsapp"
+  }]
+}, {
+  id: 2,
+  subject: "Manajemen Risiko",
+  abbrev: "Manris",
+  src: "https://learning.uin-suka.ac.id",
+  deadline: "13 June 2020, 23:59",
+  details: [{
+    id: 1,
+    text: "UTS, silahkan unduh soal dibawah ini:",
+    attachment: {
+      name: "SOAL_UTS_GASAL_2020-2021(Manajemen_Risiko).pdf",
+      type: "document"
+    }
+  }, {
+    id: 2,
+    text: "perhatikan pengerjaan soal dan perhatikan batas waktu pengumpulan"
+  }]
+}, {
+  id: 3,
+  subject: "Pemograman Berorientasi Objek",
+  abbrev: "PBO",
+  src: "https://classroom.google.com/",
+  deadline: "11 June 2020, 23:59",
+  details: [{
+    id: 1,
+    text: "Praktikum perdana, download materi disini:",
+    attachment: {
+      name: "modul_praktikum-3.doc",
+      type: "document"
+    }
+  }, {
+    id: 2,
+    text: "Silahkan dipelajari secara mandiri dan kerjakan tugasnya"
+  }]
+}, {
+  id: 4,
+  subject: "Pemograman Berorientasi Objek",
+  abbrev: "PBO",
+  src: "https://classroom.google.com/",
+  deadline: "21 June 2020, 13:59",
+  details: [{
+    id: 1,
+    text: "Praktikum-2, membahas inheritance:",
+    attachment: {
+      name: "modul_praktikum-4.doc",
+      type: "document"
+    }
+  }, {
+    id: 2,
+    text: "Silahkan dipelajari secara mandiri dan kerjakan tugasnya"
+  }, {
+    id: 3,
+    text: "Pengumpulan tugas disatukan dan dikirim oleh ketua kelas."
+  }]
+}, {
+  id: 5,
+  subject: "Kecerdasan Buatan",
+  abbrev: "KB",
+  src: "https://learning.uin-suka.ac.id",
+  deadline: "29 June 2020, 11:00",
+  details: [{
+    id: 1,
+    text: "Materi kali ini membahas Uncertainty",
+    attachment: {
+      name: "uncertainty",
+      type: "video"
+    }
+  }, {
+    id: 2,
+    text: "kerjakan tugasnya dari A-B"
+  }]
+}];
+/* harmony default export */ __webpack_exports__["default"] = (DATA);
+
+/***/ }),
+
+/***/ "./resources/js/components/logo.svg":
+/*!******************************************!*\
+  !*** ./resources/js/components/logo.svg ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+module.exports = "/images/logo.svg?61b29052ae084ba1a8bfc9e4c5d8a288";
 
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***********************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /opt/lampp/htdocs/tugas-ku/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /opt/lampp/htdocs/tugas-ku/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /opt/lampp/htdocs/tugas-ku/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })
