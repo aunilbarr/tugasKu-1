@@ -7,6 +7,7 @@ const DATA = [
         abbrev: "SIM",
         src: "https://learning.uin-suka.ac.id",
         deadline: "12 June 2020, 23:00",
+        group: "A",
         details: [
             {
                 id: 1,
@@ -53,6 +54,7 @@ const DATA = [
         abbrev: "PBO",
         src: "https://classroom.google.com/",
         deadline: "11 June 2020, 23:59",
+        group: "A",
         details: [
             {
                 id: 1,
@@ -74,6 +76,7 @@ const DATA = [
         abbrev: "PBO",
         src: "https://classroom.google.com/",
         deadline: "21 June 2020, 13:59",
+        group: "B",
         details: [
             {
                 id: 1,

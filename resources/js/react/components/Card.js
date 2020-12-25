@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const documentIcon = (
     <svg className="w-4 h-4 mr-4 stroke-current text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -61,26 +62,48 @@ function Details(props) {
     )
 }
 
-function Card(props){
+Details.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.object)
+}
+
+function Card({
+    abbrev,
+    deadline,
+    details,
+    group,
+    src,
+    subject,
+}){
     return (
         <div className="bg-white border w-full rounded-lg mb-6 shadow-lg">
             <div className="px-4 py-2 rounded-t-lg mb-4 bg-green-500">
-                <span className="text-white font-semibold">{props.deadline}</span>
+                <span className="text-white font-semibold">{deadline}</span>
             </div>
             <div className="flex items-center justify-between">
-                <div className="px-4 flex items-end">
-                    <h2 className="text-4xl font-extrabold mr-2 leading-none">{props.abbrev}</h2>
-                    <span className="text-sm text-gray-400">({props.subject})</span>
+                <div className="px-4 flex items-center">
+                    <h2 className="text-4xl font-extrabold mr-2 leading-none">{abbrev}</h2>
+                    <div className="flex flex-col">
+                        {group === undefined || <span className="text-sm text-gray-400">kelas <strong>{group}</strong></span>}
+                        <span className="text-sm text-gray-400">({subject})</span>
+                    </div>
                 </div>
-                <a href={props.src} className="pr-4">
+                <a href={src} className="pr-4">
                     <svg className="w-6 h-6 stroke-current text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                     </svg>
                 </a>
             </div>
-            <Details data={props.details} />
+            <Details data={details} />
         </div>
     )
+}
+
+Card.propTypes = {
+    abbrev: PropTypes.string,
+    deadline: PropTypes.string,
+    group: PropTypes.string,
+    src: PropTypes.string.isRequired,
+    subject: PropTypes.string,
 }
 
 export default Card;
