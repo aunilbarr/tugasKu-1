@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../../Shared/SearchBar';
 import DATA from "./data.js"
-import CardWrapper from '../components/CardWrapper';
+import CardWrapper from '../../Shared/CardWrapper'
+import Layout from '../../Shared/Layout'
 
 function Testimony() {
     return (
@@ -87,6 +88,7 @@ function Homepage() {
     }
 
     return (
+    <Layout>
       <div className="max-w-4xl">
         <div className="w-full py-4 px-4 flex flex-col items-center lg:mb-2">
             <h1 className="font-bold text-4xl leading-tight mb-2 text-center">Temukan tugasmu dengan Mudah.</h1>
@@ -122,8 +124,8 @@ function Homepage() {
             )
         }
       </div>
+    </Layout>
     );
 }
 
 export default Homepage;
-
