@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../../Shared/SearchBar';
 import DATA from "./data.js"
-import CardWrapper from '../components/CardWrapper';
+import CardWrapper from '../../Shared/CardWrapper'
+import Layout from '../../Shared/Layout'
 
 function Testimony() {
     return (
@@ -17,7 +18,7 @@ function Testimony() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                 </svg>
-                <span className="text-center leading-tight text-sm">Pengampu bisa melihat dan mengkondisikan jumlah tugas mahasiswa</span>
+                <span className="text-center leading-tight text-sm">Pengampu bisa melihat lebih luas & mulai mengkondisikan jumlah tugas mahasiswa</span>
             </div>
             <div className="flex flex-col items-center w-3/12">
                 <svg className="w-10 h-10 mb-2 stroke-current text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +88,8 @@ function Homepage() {
     }
 
     return (
-      <div className="max-w-4xl">
+    <Layout>
+      <div className="max-w-4xl mx-auto">
         <div className="w-full py-4 px-4 flex flex-col items-center lg:mb-2">
             <h1 className="font-bold text-4xl leading-tight mb-2 text-center">Temukan tugasmu dengan Mudah.</h1>
             <p className="text-gray-700 text-base text-center">
@@ -122,8 +124,8 @@ function Homepage() {
             )
         }
       </div>
+    </Layout>
     );
 }
 
 export default Homepage;
-
