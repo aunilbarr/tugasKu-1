@@ -33011,6 +33011,10 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./Dashboard/Create": "./resources/js/Pages/Dashboard/Create.js",
+	"./Dashboard/Create.js": "./resources/js/Pages/Dashboard/Create.js",
+	"./Dashboard/Index": "./resources/js/Pages/Dashboard/Index.js",
+	"./Dashboard/Index.js": "./resources/js/Pages/Dashboard/Index.js",
 	"./Homepage/Index": "./resources/js/Pages/Homepage/Index.js",
 	"./Homepage/Index.js": "./resources/js/Pages/Homepage/Index.js",
 	"./Homepage/data": "./resources/js/Pages/Homepage/data.js",
@@ -33038,6 +33042,325 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Create.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Create.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+function CreateTask() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    mata_kuliah: "",
+    abbrev: "",
+    web_src: "",
+    group_select: "",
+    deadline_date: "",
+    deadline_time: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      values = _useState2[0],
+      setValues = _useState2[1];
+
+  function handleChange(e) {
+    var key = e.target.id;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    Inertia.post('/users', values);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "max-w-4xl w-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit,
+    className: "flex flex-col justify-between items-start p-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex justify-between w-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col w-2/4 mr-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "mata_kuliah"
+  }, "Mata Kuliah"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "font-semibold underline border p-1 mb-2",
+    type: "text",
+    id: "mata_kuliah",
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "abbrev"
+  }, "Singkatan"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "font-semibold underline border p-1 mb-2",
+    type: "text",
+    id: "abbrev",
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "web_src"
+  }, "Web Asal"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "font-semibold underline border p-1 mb-2",
+    type: "text",
+    id: "web_src",
+    onChange: handleChange
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col w-2/4 mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "group_select"
+  }, "Kelas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    id: "group_select",
+    className: "bg-white border p-1 mb-2",
+    onChange: handleChange
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: ""
+  }, "Tidak ada Pembagian Kelas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "a"
+  }, "A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "b"
+  }, "B")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "deadline_date"
+  }, "Tanggal Deadline"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "font-semibold underline border p-1 mb-2",
+    type: "date",
+    id: "deadline_date",
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "deadline_time"
+  }, "Waktu Deadline"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "font-semibold underline border p-1 mb-2",
+    type: "time",
+    id: "deadline_time",
+    onChange: handleChange
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit",
+    className: "px-4 py-2 bg-blue-600 rounded text-white"
+  }, "Submit"))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CreateTask);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Index.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Index.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Shared_SearchBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/SearchBar */ "./resources/js/Shared/SearchBar.js");
+/* harmony import */ var _Homepage_data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Homepage/data.js */ "./resources/js/Pages/Homepage/data.js");
+/* harmony import */ var _Shared_CardWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/CardWrapper */ "./resources/js/Shared/CardWrapper.js");
+/* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+function Testimony() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Testimony here");
+}
+
+function EmptyMessage() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "items-center justify-center flex"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "w-16 h-16 stroke-current text-blue-500 mr-4",
+    fill: "none",
+    stroke: "currentColor",
+    viewBox: "0 0 24 24",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
+    d: "M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-center leading-tight text-gray-700"
+  }, "Data tidak ditemukan (hooray?), silahkan lihat panduan mengapa data tidak ditemukan"));
+}
+
+function Dashboard() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      tasks = _useState2[0],
+      setTasks = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      filtered = _useState4[0],
+      setFiltered = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      isLoaded = _useState6[0],
+      setIsLoaded = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      searchValue = _useState8[0],
+      setSearchValue = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('all'),
+      _useState10 = _slicedToArray(_useState9, 2),
+      groupValue = _useState10[0],
+      setGroupValue = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(function () {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Testimony, null);
+  }),
+      _useState12 = _slicedToArray(_useState11, 2),
+      noDataFoundComponent = _useState12[0],
+      setNoDataFoundComponent = _useState12[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // calls API here
+    setTasks(_Homepage_data_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
+    setIsLoaded(true);
+  }, []);
+
+  function handleSearchChange(value) {
+    setSearchValue(value);
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var filteredTasks = [];
+
+    if (searchValue) {
+      filteredTasks = tasks.filter(function (task) {
+        var regex = new RegExp(searchValue, 'gi');
+        return task.abbrev.match(regex) || task.subject.match(regex);
+      });
+      setNoDataFoundComponent( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(EmptyMessage, null));
+    } else {
+      setNoDataFoundComponent( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Testimony, null));
+    }
+
+    if (groupValue !== 'all') {
+      filteredTasks = filteredTasks.filter(function (task) {
+        if (task.group) {
+          return task.group.toLowerCase() === groupValue;
+        }
+
+        return false;
+      });
+    }
+
+    setFiltered(filteredTasks);
+  }, [searchValue, groupValue]);
+
+  function handleGroupChange(value) {
+    setGroupValue(value);
+  }
+
+  function addHandler() {
+    console.log("adding card");
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "max-w-4xl w-full"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col sm:flex-row justify-between items-center py-4 px-4 lg:mb-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "font-bold text-3xl sm:text-4xl leading-tight mb-2 text-center sm:text-left"
+  }, "Selamat datang admin"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-gray-700 text-base text-center sm:text-left"
+  }, "Buat, Teliti, Perbarui, dan Hapus tugas-tugas disini.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__["InertiaLink"], {
+    href: "/admin/create",
+    className: "flex flex-row sm:flex-col items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "w-12 h-12 mr-4 stroke-current text-blue-500",
+    fill: "currentColor",
+    viewBox: "0 0 20 20",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    fillRule: "evenodd",
+    d: "M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z",
+    clipRule: "evenodd"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Buat Tugas Baru"))), isLoaded ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-full py-4 px-4 mx-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_SearchBar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    searchBarOnChange: handleSearchChange,
+    selectedGroup: groupValue,
+    groupOnChange: handleGroupChange
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "px-4 lg:pt-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_CardWrapper__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    adminMode: true,
+    cards: filtered,
+    emptyComponent: noDataFoundComponent
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex items-center justify-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "w-6 h-6 animate-spin mr-2 stroke-current text-gray-500",
+    fill: "none",
+    stroke: "currentColor",
+    viewBox: "0 0 24 24",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "2",
+    d: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "font-medium text-gray-500"
+  }, "Memuat tugas..."))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Dashboard);
 
 /***/ }),
 
@@ -33112,7 +33435,7 @@ function Testimony() {
     d: "M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-center leading-tight text-sm"
-  }, "Pengampu bisa melihat dan mengkondisikan jumlah tugas mahasiswa")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Pengampu bisa melihat lebih luas & mulai mengkondisikan jumlah tugas mahasiswa")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex flex-col items-center w-3/12"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
     className: "w-10 h-10 mb-2 stroke-current text-blue-500",
@@ -33223,7 +33546,7 @@ function Homepage() {
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "max-w-4xl"
+    className: "max-w-4xl mx-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w-full py-4 px-4 flex flex-col items-center lg:mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -33281,37 +33604,22 @@ var DATA = [{
   src: "https://learning.uin-suka.ac.id",
   deadline: "12 June 2020, 23:00",
   group: "A",
-  details: [{
-    id: 1,
-    text: "download soal berikut ini",
-    attachment: {
-      name: "Tugas_12_Juni.pdf",
-      type: "document"
-    }
-  }, {
-    id: 2,
-    text: "kumpulkan dengan format [NIM].pdf"
-  }, {
-    id: 3,
-    text: "Kumpulkan via Email yang sudah tercantum di grup Whatsapp"
-  }]
+  detail_text: "download soal berikut ini lalu kerjakan",
+  attachment: {
+    name: "Tugas_12_Juni.pdf",
+    type: "document"
+  }
 }, {
   id: 2,
   subject: "Manajemen Risiko",
   abbrev: "Manris",
   src: "https://learning.uin-suka.ac.id",
   deadline: "13 June 2020, 23:59",
-  details: [{
-    id: 1,
-    text: "UTS, silahkan unduh soal dibawah ini:",
-    attachment: {
-      name: "SOAL_UTS_GASAL_2020-2021(Manajemen_Risiko).pdf",
-      type: "document"
-    }
-  }, {
-    id: 2,
-    text: "perhatikan pengerjaan soal dan perhatikan batas waktu pengumpulan"
-  }]
+  detail_text: "UTS, silahkan unduh soal dibawah ini, kerjakan dan perhatikan batas deadline",
+  attachment: {
+    name: "SOAL_UTS_GASAL_2020-2021(Manajemen_Risiko).pdf",
+    type: "document"
+  }
 }, {
   id: 3,
   subject: "Pemograman Berorientasi Objek",
@@ -33319,17 +33627,11 @@ var DATA = [{
   src: "https://classroom.google.com/",
   deadline: "11 June 2020, 23:59",
   group: "A",
-  details: [{
-    id: 1,
-    text: "Praktikum perdana, download materi disini:",
-    attachment: {
-      name: "modul_praktikum-3.doc",
-      type: "document"
-    }
-  }, {
-    id: 2,
-    text: "Silahkan dipelajari secara mandiri dan kerjakan tugasnya"
-  }]
+  detail_text: "Praktikum perdana, download materi disini:",
+  attachment: {
+    name: "modul_praktikum-3.doc",
+    type: "document"
+  }
 }, {
   id: 4,
   subject: "Pemograman Berorientasi Objek",
@@ -33337,37 +33639,22 @@ var DATA = [{
   src: "https://classroom.google.com/",
   deadline: "21 June 2020, 13:59",
   group: "B",
-  details: [{
-    id: 1,
-    text: "Praktikum-2, membahas inheritance:",
-    attachment: {
-      name: "modul_praktikum-4.doc",
-      type: "document"
-    }
-  }, {
-    id: 2,
-    text: "Silahkan dipelajari secara mandiri dan kerjakan tugasnya"
-  }, {
-    id: 3,
-    text: "Pengumpulan tugas disatukan dan dikirim oleh ketua kelas."
-  }]
+  detail_text: "Praktikum-2, membahas inheritance, pengumpulan tugas disatukan dan dikirim oleh ketua kelas",
+  attachment: {
+    name: "modul_praktikum-4.doc",
+    type: "document"
+  }
 }, {
   id: 5,
   subject: "Kecerdasan Buatan",
   abbrev: "KB",
   src: "https://learning.uin-suka.ac.id",
   deadline: "29 June 2020, 11:00",
-  details: [{
-    id: 1,
-    text: "Materi kali ini membahas Uncertainty",
-    attachment: {
-      name: "uncertainty",
-      type: "video"
-    }
-  }, {
-    id: 2,
-    text: "kerjakan tugasnya dari A-B"
-  }]
+  detail_text: "Materi kali ini membahas Uncertainty, kerjakan tugasnya dari A-B",
+  attachment: {
+    name: "uncertainty",
+    type: "video"
+  }
 }];
 /* harmony default export */ __webpack_exports__["default"] = (DATA);
 
@@ -33430,6 +33717,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 
 
 var documentIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -33474,53 +33765,51 @@ var urlIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createEl
   d: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
 }));
 
-function Details(props) {
-  var details = props.data;
-  var listDetails = details.map(function (detail) {
-    var attachment = detail.attachment;
-    var attachmentBox;
+function Details(_ref) {
+  var detail_text = _ref.detail_text,
+      attachment = _ref.attachment;
+  var attachmentBox;
 
-    if (attachment) {
-      var attachmentIcon;
+  if (attachment) {
+    var attachmentIcon;
 
-      if (attachment.type === "document") {
-        attachmentIcon = documentIcon;
-      } else if (attachment.type === "video") {
-        attachmentIcon = videoIcon;
-      } else {
-        attachmentIcon = urlIcon;
-      }
-
-      attachmentBox = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "flex bg-gray-100 p-2 rounded-md mt-2 items-center"
-      }, attachmentIcon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "text-sm font-medium"
-      }, detail.attachment.name));
+    if (attachment.type === "document") {
+      attachmentIcon = documentIcon;
+    } else if (attachment.type === "video") {
+      attachmentIcon = videoIcon;
+    } else {
+      attachmentIcon = urlIcon;
     }
 
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: detail.id.toString(),
-      className: "p-4 border-t"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, detail.text), attachmentBox);
-  });
+    attachmentBox = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "flex bg-gray-100 p-2 rounded-md mt-2 items-center"
+    }, attachmentIcon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "text-sm font-medium"
+    }, attachment.name));
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mt-4"
-  }, listDetails);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "p-4 border-t"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, detail_text), attachmentBox));
 }
 
 Details.propTypes = {
-  data: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object)
+  detail_text: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  attachment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
 };
 
-function Card(_ref) {
-  var abbrev = _ref.abbrev,
-      deadline = _ref.deadline,
-      details = _ref.details,
-      group = _ref.group,
-      src = _ref.src,
-      subject = _ref.subject;
+function Card(_ref2) {
+  var abbrev = _ref2.abbrev,
+      deadline = _ref2.deadline,
+      group = _ref2.group,
+      src = _ref2.src,
+      subject = _ref2.subject,
+      props = _objectWithoutProperties(_ref2, ["abbrev", "deadline", "group", "src", "subject"]);
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "bg-white border w-full rounded-lg mb-6 shadow-lg"
+    className: "bg-white border w-full rounded-lg mb-6 shadow-lg flex-grow"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "px-4 py-2 rounded-t-lg mb-4 bg-green-500"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -33551,9 +33840,7 @@ function Card(_ref) {
     strokeLinejoin: "round",
     strokeWidth: "2",
     d: "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Details, {
-    data: details
-  }));
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Details, props));
 }
 
 Card.propTypes = {
@@ -33581,26 +33868,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Card */ "./resources/js/Shared/Card.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 
 function CardWrapper(_ref) {
-  var cards = _ref.cards,
+  var adminMode = _ref.adminMode,
+      cards = _ref.cards,
       emptyComponent = _ref.emptyComponent;
   var listsCard;
 
+  function editHandler(id) {
+    console.log("editClicked :" + id);
+  }
+
+  function deleteHandler(id) {
+    console.log("deleteHandler :" + id);
+  }
+
   if (cards.length > 0) {
     listsCard = cards.map(function (card) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        key: card.id,
-        src: card.src,
-        details: card.details,
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flex items-center w-full",
+        key: card.id
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
         abbrev: card.abbrev,
-        subject: card.subject,
+        attachment: card.attachment,
         deadline: card.deadline,
-        group: card.group
-      });
+        detail_text: card.detail_text,
+        group: card.group,
+        src: card.src,
+        subject: card.subject
+      }), !adminMode || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flex flex-col ml-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        onClick: function onClick() {
+          return deleteHandler(card.id);
+        },
+        className: "w-8 h-8 mb-4 stroke-current text-blue-500",
+        fill: "currentColor",
+        viewBox: "0 0 20 20",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        fillRule: "evenodd",
+        d: "M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z",
+        clipRule: "evenodd"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
+        href: "/admin/edit/".concat(card.id),
+        className: "flex flex-row sm:flex-col items-center"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "w-8 h-8 stroke-current text-blue-500",
+        fill: "currentColor",
+        viewBox: "0 0 20 20",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+      })))));
     });
   } else if (cards.length === 0) {
     listsCard = emptyComponent;
@@ -33613,10 +33939,12 @@ function CardWrapper(_ref) {
 }
 
 CardWrapper.propTypes = {
+  adminMode: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   cards: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object),
   emptyComponent: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.element
 };
 CardWrapper.defaultProps = {
+  adminMode: false,
   cards: [],
   emptyComponent: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Data yang anda cari tidak ditemukan")
 };

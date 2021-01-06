@@ -20,62 +20,53 @@ const urlIcon = (
     </svg>
 )
 
-function Details(props) {
-    const details = props.data;
-    const listDetails = details.map(detail => {
-        const attachment = detail.attachment
-        let attachmentBox
+function Details({detail_text, attachment}) {
+    let attachmentBox
 
-        if (attachment) {
-            let attachmentIcon
-            if (attachment.type === "document") {
-                attachmentIcon = documentIcon
-            } else if (attachment.type === "video") {
-                attachmentIcon = videoIcon
-            } else {
-                attachmentIcon = urlIcon
-            }
+    if (attachment) {
+        let attachmentIcon
 
-            attachmentBox = (
-                <div className="flex bg-gray-100 p-2 rounded-md mt-2 items-center">
-                    {attachmentIcon}
-                    <span className="text-sm font-medium">{detail.attachment.name}</span>
-                </div>
-            )
+        if (attachment.type === "document") {
+            attachmentIcon = documentIcon
+        } else if (attachment.type === "video") {
+            attachmentIcon = videoIcon
+        } else {
+            attachmentIcon = urlIcon
         }
 
-        return (
-            <div
-                key={detail.id.toString()}
-                className="p-4 border-t"
-            >
-                <span>{detail.text}</span>
-                {attachmentBox}
+        attachmentBox = (
+            <div className="flex bg-gray-100 p-2 rounded-md mt-2 items-center">
+                {attachmentIcon}
+                <span className="text-sm font-medium">{attachment.name}</span>
             </div>
         )
-    })
+    }
 
     return (
         <div className="mt-4">
-            {listDetails}
+            <div className="p-4 border-t">
+                <span>{detail_text}</span>
+                {attachmentBox}
+            </div>
         </div>
     )
 }
 
 Details.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.object)
+    detail_text: PropTypes.string.isRequired,
+    attachment: PropTypes.object,
 }
 
 function Card({
     abbrev,
     deadline,
-    details,
     group,
     src,
     subject,
+    ...props
 }){
     return (
-        <div className="bg-white border w-full rounded-lg mb-6 shadow-lg">
+        <div className="bg-white border w-full rounded-lg mb-6 shadow-lg flex-grow">
             <div className="px-4 py-2 rounded-t-lg mb-4 bg-green-500">
                 <span className="text-white font-semibold">{deadline}</span>
             </div>
@@ -93,7 +84,7 @@ function Card({
                     </svg>
                 </a>
             </div>
-            <Details data={details} />
+            <Details {...props} />
         </div>
     )
 }

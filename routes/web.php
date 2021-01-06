@@ -17,7 +17,12 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Homepage/Index');
-    // return view('welcome');
 });
 
-Route::inertia('/admin', 'Login/Index');
+Route::get('/admin', function () {
+    return Inertia::render('Dashboard/Index');
+});
+
+Route::get('/admin/create', function () {
+    return Inertia::render('Dashboard/Create');
+});
