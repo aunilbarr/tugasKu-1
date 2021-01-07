@@ -1,21 +1,38 @@
 import React from 'react';
-import { InertiaLink } from '@inertiajs/inertia-react'
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
-function Layout({children}) {
+import Homepage from './pages/Homepage'
+import Login from './pages/Login'
+
+function App() {
     return (
+    <Router>
       <div className="App text-gray-800 min-h-screen flex flex-col justify-between items-center">
         {/* navbar */}
         <header className="w-full py-4 px-4 lg:px-8 flex items-center justify-between">
-            <InertiaLink href="/">
+            <Link to="/">
                 <img src={logo} className="w-32" alt="logo" />
-            </InertiaLink>
-            <InertiaLink href="/admin">
+            </Link>
+            <Link to="/admin">
                 <span className="underline text-blue-700">admin?</span>
-            </InertiaLink>
+            </Link>
         </header>
         {/* view goes here */}
-        {children}
+        <Switch>
+            <Route exact path="/">
+                <Homepage />
+            </Route>
+            <Route path="/admin">
+                <Login />
+            </Route>
+        </Switch>
         {/* footer */}
         <footer className="w-full py-4 px-4 lg:px-8 flex items-center justify-center">
             <span className="text-sm text-gray-500">
@@ -23,8 +40,11 @@ function Layout({children}) {
             </span>
         </footer>
       </div>
+    </Router>
     );
 }
 
-export default Layout;
+export default App;
+
+ReactDOM.render(<App />, document.getElementById('root'));
 

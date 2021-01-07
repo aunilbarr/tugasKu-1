@@ -27,9 +27,6 @@
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
     },
     "dependencies": {
-        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-        "@inertiajs/inertia": "^0.8.2",
-        "@inertiajs/inertia-react": "^0.5.0",
-        "@inertiajs/progress": "^0.2.4"
+        "react-router-dom": "^5.2.0"
     }
 }

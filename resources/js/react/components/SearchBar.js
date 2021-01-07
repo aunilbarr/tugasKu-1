@@ -22,7 +22,7 @@ function SearchBar({groupOnChange, searchBarOnChange, selectedGroup}) {
             <form className="flex-auto" >
               <input
                 className="py-4 px-4 w-full"
-                type="search"
+                type="text"
                 placeholder="Mau mengerjakan apa hari ini?"
                 onChange={handleSearchBarOnChange}
             />

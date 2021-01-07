@@ -1,9 +1,10 @@
 import React from 'react';
-import Layout from '../../Shared/Layout'
+import SearchBar from '../components/SearchBar';
+import DATA from "./data.js"
+import CardWrapper from '../components/CardWrapper';
 
 function Login() {
     return (
-    <Layout>
         <div className="p-4 border rounded max-w-lg flex flex-col items-center">
             <div className="flex flex-between items-start">
                 <a href="/" className="text-sm font-semibold text-gray-700">
@@ -14,8 +15,8 @@ function Login() {
             <input className="border rounded p-2 mb-4" type="email" placeholder="E-mail" name="" id="" />
             <input className="border rounded p-2" type="password" placeholder="Password" name="" id="" />
         </div>
-    </Layout>
     );
 }
 
 export default Login;
+
